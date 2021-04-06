@@ -6135,10 +6135,12 @@ readers do not read off random characters that represent icons */
 }
 .container .table-row .row {
   display: flex;
+  position: relative;
   width: 100%;
   margin-top: 2px;
 }
 .container .cells {
+  width: auto;
   height: auto;
 }
 .container .cells:first-child {
@@ -6170,6 +6172,11 @@ readers do not read off random characters that represent icons */
   position: absolute;
   bottom: -25px;
   right: 0px;
+}
+.container .icon {
+  position: absolute;
+  top: 0px;
+  right: -20px;
 }
 
 /*# sourceMappingURL=style.css.map */

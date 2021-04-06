@@ -7,8 +7,6 @@ let addRow = document.getElementById("addRow");
 addRow.addEventListener("click", createRow);
 
 
-
-
 function addElementOption(val, name) {
     let option = document.createElement("option");
     option.setAttribute("value",val);
@@ -31,16 +29,20 @@ function createRow() {
     let table = document.getElementById("tableRow")
     let div = document.createElement("div");    
     div.setAttribute("class","row");
-    
+    let span = document.createElement("span");
+        let icon = document.createElement("i");
+        span.setAttribute("class","icon");
+        setAttributes(icon,{"class":"fas fa-plus"});
+        span.append(icon);
     for (let i=1; i<=3; i++) {       
         let child = document.createElement("div");
-        child.setAttribute("class","cells");
         let input = document.createElement("input");
+        child.setAttribute("class","cells");        
         setAttributes(input,{"type": "text","class":"input"})
          child.append(input);
          div.append(child)
         };
-        
+        div.append(span);
     return table.append(div)
     
 }
