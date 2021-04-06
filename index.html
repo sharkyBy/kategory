@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer type="module" src="./js/main.js"></script>
+    <title>Kategory</title>
+  </head>
+  <body>
+    <div class="container">
+      <select name="material" id="material" type="text"> </select>
+      <button type="button" id="addMaterial">Добавить</button>
+      <div class="table">
+        <div class="table-head">
+          <div class="cells">Наименование вещества</div>
+          <div class="cells">Низшая теплота сгорания вещества Qн, МДж/ кг</div>
+          <div class="cells">Количество вещества G. кг</div>
+        </div>
+        <div class="table-row" id="tableRow">
+          <div class="row">
+            <div class="cells" name="newRow">
+              <input type="text" id="materialName" class="input" />              
+
+            </div>
+            <div class="cells">
+              <input type="text" id="materialHeat" class="input" />
+            </div>
+            <div class="cells">
+              <input type="text" id="materialWeight" class="input" />
+            </div>
+          </div>
+
+          <button type="button" id="addRow">+</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
