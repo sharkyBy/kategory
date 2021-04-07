@@ -1,6 +1,6 @@
 import {_store} from "./base.js";
 
-getMaterial(_store.teplo);
+setMaterial(_store.teplo);
 
 
 let addRow = document.getElementById("addRow");
@@ -10,6 +10,25 @@ addRow.addEventListener("click", createRow);
 // console.log(add)
 // add[0].addEventListener("click",()=>el.parentElement.remove())
 
+
+function setValue() {
+    const select = document.getElementById("material");
+ const res = {
+    name:select.selectedOptions[0].innerText,
+    val:select.selectedOptions[0].value
+}
+return res
+
+}
+
+function getElem(e) {
+    let name = e.target.parentElement.parentElement.children[0].firstChild.value=setValue().name;
+    let val = e.target.parentElement.parentElement.children[1].firstChild.value=setValue().val;
+    return name, val
+
+}
+
+
 function addElementOption(val, name) {
     let option = document.createElement("option");
     option.setAttribute("value",val);
@@ -18,7 +37,7 @@ function addElementOption(val, name) {
     return select.append(option)
 }
 
-function getMaterial(material) {
+function setMaterial(material) {
     return material.map((item) => {
         let val = item.heat;
         let name = item.name;
@@ -35,7 +54,7 @@ function createRow() {
     let span = document.createElement("span");
         let icon = document.createElement("i");
         span.setAttribute("class","icon");
-        span.addEventListener("click", (e)=>e.target.parentElement.parentElement.remove())
+        span.addEventListener("click", getElem )
         setAttributes(icon,{"class":"fas fa-plus"});
         span.append(icon);
     for (let i=1; i<=3; i++) {       
