@@ -6,6 +6,9 @@ getMaterial(_store.teplo);
 let addRow = document.getElementById("addRow");
 addRow.addEventListener("click", createRow);
 
+// let add = document.getElementsByName("add");
+// console.log(add)
+// add[0].addEventListener("click",()=>el.parentElement.remove())
 
 function addElementOption(val, name) {
     let option = document.createElement("option");
@@ -32,6 +35,7 @@ function createRow() {
     let span = document.createElement("span");
         let icon = document.createElement("i");
         span.setAttribute("class","icon");
+        span.addEventListener("click", (e)=>e.target.parentElement.parentElement.remove())
         setAttributes(icon,{"class":"fas fa-plus"});
         span.append(icon);
     for (let i=1; i<=3; i++) {       
