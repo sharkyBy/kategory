@@ -6100,6 +6100,18 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "RobotoRegular";
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(./fonts/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoLight";
+  src: url(./fonts/Roboto-Light.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -6111,23 +6123,42 @@ readers do not read off random characters that represent icons */
   min-width: 300px;
   margin: 0 auto;
   margin-top: 50px;
+  font-family: "RobotoRegular";
 }
 .container .table {
   width: 100%;
   height: 100%;
   margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+}
+.container .table .cells {
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  height: auto;
 }
 .container .table-head {
   width: 100%;
-  height: 40px;
+  height: auto;
   display: flex;
+  justify-content: center;
+  font-family: "RobotoLight";
+  font-size: 16px;
   background-color: #414444;
 }
 .container .table-head .cells {
-  text-align: center;
-  vertical-align: middle;
-  color: white;
+  padding: 2px 0;
   border: 1px solid white;
+}
+.container .table-head .cells:first-child {
+  width: 50%;
+}
+.container .table-head .cells:nth-child(2) {
+  width: 25%;
+}
+.container .table-head .cells:last-child {
+  width: 25%;
 }
 .container .table-row {
   position: relative;
@@ -6137,28 +6168,38 @@ readers do not read off random characters that represent icons */
   display: flex;
   position: relative;
   width: 100%;
+  height: 25px;
   margin-top: 2px;
 }
-.container .cells {
-  width: auto;
-  height: auto;
+.container .table-row .row .cells {
+  border: 1px solid #414444;
+  color: black;
 }
-.container .cells:first-child {
+.container .table-row .row .cells:first-child {
   width: 50%;
 }
-.container .cells:nth-child(2) {
+.container .table-row .row .cells:nth-child(2) {
   width: 25%;
 }
-.container .cells:last-child {
+.container .table-row .row .cells:nth-child(3) {
   width: 25%;
 }
-.container .input {
+.container .table-row .row .input {
   width: 100%;
-  height: 20px;
+  height: auto;
+  font-family: "RobotoLight";
+  font-size: 16px;
+  outline-style: none;
+  border-style: none;
 }
 .container [name=material] {
   width: 180px;
   height: 25px;
+  margin-left: 10px;
+}
+.container [name=material] option {
+  font-family: inherit;
+  font-size: 14px;
 }
 .container #addMaterial {
   width: 80px;

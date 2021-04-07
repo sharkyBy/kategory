@@ -1,7 +1,7 @@
 @import "../scss/fontawesome.scss";
 @import "../scss/solid.scss";
 @import "../scss/regular.scss";
-
+@import "./fonts/font.scss";
 
 * {
   margin: 0;
@@ -14,83 +14,119 @@
   min-width: 300px;
   margin: 0 auto;
   margin-top: 50px;
+  font-family: "RobotoRegular";
 
   .table {
     width: 100%;
     height: 100%;
     margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+
+    .cells {    
+      text-align: center;
+      color: white;
+      border: 1px solid white;   
+      height: auto;
+      // border: 1px solid red;
+    }
+
     &-head {
-        width: 100%;
-        height: 40px;
-        display: flex;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+     
+      font-family: "RobotoLight";
+      font-size: 16px;
       background-color: rgb(65, 68, 68);
-      
       .cells {
-          text-align: center;
-          vertical-align: middle;
-          color: white;
-      border: 1px solid white;
+        padding: 2px 0;
+        border: 1px solid white;
+        &:first-child {
+          width: 50%;
+          
+        }
+        &:nth-child(2) {
+          width:25%;
+        }
+        &:last-child {
+          width: 25%;
+        }
+      }
+    }
+    &-row {
+      position: relative;
+      width: 100%;
+      // background-color: aquamarine;
+      .row {
+        display: flex;
+        // justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 25px;
+        margin-top: 2px;
+        .cells {
+         border: 1px solid rgb(65, 68, 68);
+         color: black;
+          &:first-child {
+            width: 50%;
+                               
+          }
+          &:nth-child(2) {
+            width: 25%;
+            
+          }
+          &:nth-child(3) {
+            width: 25%;          
+          }
+        }
+        .input {   
+          width: 100%;
+          height: auto;               
+          font-family: "RobotoLight";
+          font-size: 16px;
+          outline-style: none;
+          border-style: none;
+        }
+      }
     }
 
     
-
-    }
-    &-row {
-        position:relative;        
-        width: 100%;
-        // background-color: aquamarine;
-        .row {
-            display: flex;
-            position: relative;
-            width: 100%;
-            margin-top: 2px;
-            
-        }
-    }
-
-  }
-  .cells {
-    width: auto;
-      &:first-child {
-          width: 50%;
-      }
-      &:nth-child(2) {
-          width: 25%;
-      }
-      &:last-child {
-          width: 25%;
-      }    
-      height: auto;
-    //   border: 1px solid red;
   }
 
-  .input {   
-      width: 100%;
-      height: 20px;
-  }
+  
 
-  [name=material] {
+  [name="material"] {
     width: 180px;
     height: 25px;
+    margin-left: 10px;
+    option {
+      font-family: inherit;
+      font-size: 14px;
+    }
   }
 
   #addMaterial {
-      width: 80px;
-      height: 25px;
+    width: 80px;
+    height: 25px;
   }
 
   #addRow {
-      width: 30px;
-      height: 25px;
-      background-color:  rgb(65, 68, 68);
-      color: white;
-      position: absolute;
-      bottom: -25px;
-      right: 0px;
+    width: 30px;
+    height: 25px;
+    background-color: rgb(65, 68, 68);
+    color: white;
+    position: absolute;
+    bottom: -25px;
+    right: 0px;
   }
+
+ 
   .icon {
     position: absolute;
     top: 0px;
     right: -20px;
   }
+  
 }
