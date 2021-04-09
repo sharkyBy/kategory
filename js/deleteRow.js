@@ -1,11 +1,6 @@
 //Добавление строки в таблицу
-function deleteRow (e) {   
-
-    let del =e.target.parentElement.parentElement
-    console.log(del.remove())
-
-
+function deleteRow(e) {
+  return e.currentTarget.parentElement.remove();
 }
 
-
-export { deleteRow }
+export { deleteRow };

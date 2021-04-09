@@ -11,9 +11,9 @@ return res
 }
 // Установка значений в ячейки строки таблицы
 function setValueCells(e) {
-    let name = e.target.parentElement.parentElement.children[0].children[0].value=getValueOption().name;
-    let val = e.target.parentElement.parentElement.children[1].children[0].value=getValueOption().val
-    // console.log("i'm entry")
+    let name = e.currentTarget.parentElement.children[0].children[0].value=getValueOption().name;
+    let val = e.currentTarget.parentElement.children[1].children[0].value=getValueOption().val
+    
     return name, val, console.log(name,val)
 
 }

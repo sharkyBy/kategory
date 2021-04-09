@@ -5,29 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    
     <script defer type="module" src="./js/main.js"></script>
+   
     <title>Kategory</title>
   </head>
   <body>
     <div class="container">
-      <label>Выбрать вещество <select name="material" id="material" type="text"> </select> </label>
+      <h2>Определение категории помещений В1-В4</h2>
+      <div class="area_wrapper" id="roomArea">
+        <div class="area">
+          <span>Площадь размещения пожарной нагрузки S, м<sup>2</sup>
+          </span>  
+          <input type="text" class="input" id="area"/>
+        </div>
+        
+        <div class="height">
+          <span>
+          Минимальное расстояние от поверхности 
+          пожарной нагрузки до нижнего пояса ферм 
+          перекрытия (покрытия) Н, м
+        </span> 
+          <input type="text" class="input" id="height"/>       
+        </div>
+        
+      </div>
+      <div class="material-wrapper">
+        <span>Выбрать вещество </span>
+        <select name="material" id="material" type="text"> </select>
+       </div>
       <!-- <button type="button" id="addMaterial">Добавить</button> -->
       <div class="table">
         <div class="table-head">
-          <div class="cells">Наименование вещества</div>
-          <div class="cells">Низшая теплота сгорания вещества Qн, МДж/ кг</div>
-          <div class="cells">Количество вещества G. кг</div>
+          <div class="cells head"><span>Наименование вещества</span></div>
+          <div class="cells head"><span>Низшая теплота сгорания вещества Q<sub>н</sub>, МДж/ кг</span></div>
+          <div class="cells head"><span>Количество вещества G, кг</span></div>
         </div>
         <div class="table-row" id="tableRow">          
           <div class="row" name="newRow">
             <div class="cells" >
-              <input type="text" class="input" /> 
+              <input type="text" class="input" name="substance"/> 
             </div>
             <div class="cells">
-              <input type="text" class="input" />
+              <input type="text" class="input" name="heat"/>
             </div>
             <div class="cells">
-              <input type="text" class="input" />              
+              <input type="text" class="input" name="weight"/>              
             </div>
             <span class="icon" id="add"><i class="fas fa-plus"></i></span>
             <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
@@ -35,7 +58,7 @@
 
           <button type="button" id="addRow">+</button>
         </div>
-        <button type="button" id="result" style="width: 60px; height: 30px;">result</button>
+        <button type="button" id="result" >result</button>
       </div>
     </div>
   </body>

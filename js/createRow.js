@@ -14,8 +14,8 @@ function createRow() {
   let iconAdd = document.createElement("i");
   let iconDelete = document.createElement("i");
 
-  setAttributes(spanAdd, { class: "icon", id: "add" });
-  setAttributes(spanDelete, { class: "icon", id: "delete" });
+  setAttributes(spanAdd, { class: "icon", name: "add" });
+  setAttributes(spanDelete, { class: "icon", name: "delete" });
 
   spanAdd.addEventListener("click", setValueCells);
   spanDelete.addEventListener("click", deleteRow);
@@ -30,7 +30,25 @@ function createRow() {
     let child = document.createElement("div");
     let input = document.createElement("input");
     child.setAttribute("class", "cells");
-    setAttributes(input, { type: "text", class: "input" });
+    switch (i) {
+      case 1:
+        setAttributes(input, {
+          type: "text",
+          class: "input",
+          name: "substance",
+        });
+        break;
+      case 2:
+        setAttributes(input, { type: "text", class: "input", name: "heat" });
+        break;
+      case 3:
+        setAttributes(input, { type: "text", class: "input", name: "weight" });
+        break;
+      default:
+        false;
+        break;
+    }
+
     child.append(input);
     div.append(child);
   }
