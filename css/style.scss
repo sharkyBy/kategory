@@ -124,9 +124,40 @@
 
  
   .icon {
-    position: absolute;
-    top: 0px;
-    right: -20px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    background-color: rgba(65,68,68,0.9);
+    color: white;
+    min-width: 25px;
+    min-height: 20px;
+    border-radius: 5px;
+
+
+   &:hover {
+     background-color: rgb(241, 245, 245);
+     border:1px solid rgb(65,68,68);
+     transition: all 0.3s;
+   }
+
+    i {
+      margin: 2px;
+      font-size: 14px;    
+    }
+  
   }
   
+  #add {
+    position: absolute;
+    top: 2px;
+    right: -30px;
+    color: rgb(76, 211, 76);
+  }
+
+  #delete {
+    position: absolute;
+    top: 2px;
+    right: -60px;
+    color: rgb(255, 2, 2);
+  }
 }

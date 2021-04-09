@@ -6215,9 +6215,35 @@ readers do not read off random characters that represent icons */
   right: 0px;
 }
 .container .icon {
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  background-color: rgba(65, 68, 68, 0.9);
+  color: white;
+  min-width: 25px;
+  min-height: 20px;
+  border-radius: 5px;
+}
+.container .icon:hover {
+  background-color: #f1f5f5;
+  border: 1px solid #414444;
+  transition: all 0.3s;
+}
+.container .icon i {
+  margin: 2px;
+  font-size: 14px;
+}
+.container #add {
   position: absolute;
-  top: 0px;
-  right: -20px;
+  top: 2px;
+  right: -30px;
+  color: #4cd34c;
+}
+.container #delete {
+  position: absolute;
+  top: 2px;
+  right: -60px;
+  color: #ff0202;
 }
 
 /*# sourceMappingURL=style.css.map */
