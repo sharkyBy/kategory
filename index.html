@@ -14,10 +14,15 @@
     <div class="container">
       <h2>Определение категории помещений В1-В4</h2>
       <div class="area_wrapper" id="roomArea">
+        <div class="maxArea">
+          <span>Площадь помещения S<sub>п</sub>, м<sup>2</sup></span>
+          <input type="text" class="input" id="maxArea" tabindex="0"/>
+
+        </div>
         <div class="area">
           <span>Площадь размещения пожарной нагрузки S, м<sup>2</sup>
           </span>  
-          <input type="text" class="input" id="area"/>
+          <input type="text" class="input" id="area" tabindex="1"/>
         </div>
         
         <div class="height">
@@ -26,7 +31,7 @@
           пожарной нагрузки до нижнего пояса ферм 
           перекрытия (покрытия) Н, м
         </span> 
-          <input type="text" class="input" id="height"/>       
+          <input type="text" class="input" id="height" tabindex="2"/>       
         </div>
         
       </div>
@@ -60,6 +65,31 @@
         </div>
         <button type="button" id="result" >result</button>
       </div>
+      <div class="result-wrapper">
+        <div>Пожарная нагрузка участка Q, МДж 
+          <span id="fireLoad">
+
+          </span>
+        </div>
+        <div>
+          <p>Удельная временная пожарная нагрузка g, МДж/м<sup>2</sup></p>
+          <span id="tempFireLoad">
+
+          </span>
+        </div>
+        <div >
+          <p>
+           Удельная расчетная пожарная нагрузка g<sub>т</sub>, 
+          МДж/м<sup>2</sup> 
+          </p>
+          
+          <span id="calcTempFireLoad"></span>
+        </div>
+        <div>
+          Категория помещения: <span id="category"></span>
+        </div>
+      </div>
+      
     </div>
   </body>
 </html>

@@ -33,7 +33,7 @@
     margin-bottom: 10px;
     font-family: "RobotoLight";
         
-    .area, .height {
+    .area, .height, .maxArea {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -238,5 +238,24 @@
     width: 60px;
     height: 30px;
     margin-top: 10px;
+  }
+
+  .result-wrapper {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    background-color: khaki;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        color: green;
+        font-style: italic;
+      }
+    }
   }
 }

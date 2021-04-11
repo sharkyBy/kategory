@@ -1,9 +1,12 @@
 import { _store } from "./base.js";
 import { setMaterial } from "./setMaterial.js";
 import { setValueCells } from "./setValueCells.js";
-import { multiplyCells } from "./multiplyCells.js";
+import { fireLoad } from "./calcCategory.js";
 import { createRow } from "./createRow.js";
 import { deleteRow } from "./deleteRow.js";
+
+
+
 
 // Добавление значений поля select в ячейки страницы
 const _firstSpan = document.getElementById("add");
@@ -13,7 +16,7 @@ _firstSpan.addEventListener("click", (e) => {
 
 // Рассчет результата умножения ячеек таблицы
 const _result = document.getElementById("result");
-_result.addEventListener("click", multiplyCells);
+_result.addEventListener("click", ()=>fireLoad(_area.value,_height.value));
 
 //Добавление строки в таблицу
 const _addRow = document.getElementById("addRow");
@@ -26,9 +29,21 @@ setMaterial(_store.teplo);
 const _deleteRow = document.getElementById("delete");
 _deleteRow.addEventListener("click", (e)=>deleteRow(e));
 
+//Получение результата из поля "площадь" и "высота"
+let areaValue = (e)=>checkValue(e);
+let heightValue = (e)=>checkValue(e);
+
 //Получение значения площади
 const _area = document.getElementById("area");
-
+_area.addEventListener("input", areaValue )
 //Получение значения высоты
 const _height = document.getElementById("height");
+_height.addEventListener("input", heightValue);
+
+function checkValue(e) {
+  console.log(e.currentTarget.value);
+  return e.currentTarget.value
+  
+}
+
 

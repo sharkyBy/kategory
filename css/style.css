@@ -6135,7 +6135,7 @@ readers do not read off random characters that represent icons */
   margin-bottom: 10px;
   font-family: "RobotoLight";
 }
-.container .area_wrapper .area, .container .area_wrapper .height {
+.container .area_wrapper .area, .container .area_wrapper .height, .container .area_wrapper .maxArea {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -6304,6 +6304,22 @@ readers do not read off random characters that represent icons */
   width: 60px;
   height: 30px;
   margin-top: 10px;
+}
+.container .result-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  background-color: khaki;
+}
+.container .result-wrapper div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .result-wrapper div span {
+  color: green;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=style.css.map */
