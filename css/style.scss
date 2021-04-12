@@ -27,10 +27,20 @@
   }
 
 //Блок задания геометрических характеристик
+
+fieldset {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  legend {
+    margin-left: 20px;
+    font-style: italic;
+  }
+}
   .area_wrapper {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    margin-top: 10px;
     font-family: "RobotoLight";
         
     .area, .height, .maxArea {
@@ -69,6 +79,7 @@
     background-color:$select-bgd;
     font-family: "RobotoLight";
     color: $select-color;
+    margin-top: 10px;
     // border-radius: 10px;
 
   }
@@ -121,6 +132,7 @@
       position: relative;
       width: 100%;
       z-index: 0;
+      
       // background-color: aquamarine;
       .row {
         display: flex;
@@ -244,17 +256,20 @@
     display: block;
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
-    background-color: khaki;
+    margin: 10px 0px;
+    background-color: rgb(105, 105, 103);
+    color: whitesmoke;
 
     div {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-left: 10px;
 
       span {
-        color: green;
+        color: rgb(218, 215, 50);
         font-style: italic;
+        padding-right: 10px;
       }
     }
   }

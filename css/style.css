@@ -6129,10 +6129,19 @@ readers do not read off random characters that represent icons */
   text-align: center;
   margin-bottom: 20px;
 }
+.container fieldset {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.container fieldset legend {
+  margin-left: 20px;
+  font-style: italic;
+}
 .container .area_wrapper {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
+  margin-top: 10px;
   font-family: "RobotoLight";
 }
 .container .area_wrapper .area, .container .area_wrapper .height, .container .area_wrapper .maxArea {
@@ -6164,6 +6173,7 @@ readers do not read off random characters that represent icons */
   background-color: #3b3333;
   font-family: "RobotoLight";
   color: whitesmoke;
+  margin-top: 10px;
 }
 .container .table {
   width: 100%;
@@ -6309,17 +6319,20 @@ readers do not read off random characters that represent icons */
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
-  background-color: khaki;
+  margin: 10px 0px;
+  background-color: #696967;
+  color: whitesmoke;
 }
 .container .result-wrapper div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 10px;
 }
 .container .result-wrapper div span {
-  color: green;
+  color: #dad732;
   font-style: italic;
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

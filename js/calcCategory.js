@@ -71,12 +71,14 @@ let _category = document.getElementById("category");
 let _fireLoad = document.getElementById("fireLoad");
 let _tempFireLoad = document.getElementById("tempFireLoad");
 let _calcTempFireLoad = document.getElementById("calcTempFireLoad");
+let _tempLoad = document.getElementById("tempLoad");
 
 return (
     _category.innerHTML =category,
 _fireLoad.innerHTML = fireLoad,
 _tempFireLoad.innerHTML = temporaryFireLoad,
-_calcTempFireLoad.innerHTML = newTempFireLoad
+_calcTempFireLoad.innerHTML = newTempFireLoad,
+_tempLoad.innerHTML=0.6*newTempFireLoad*Math.pow(heigth,2)
 )
 
 }

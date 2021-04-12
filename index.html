@@ -13,7 +13,9 @@
   <body>
     <div class="container">
       <h2>Определение категории помещений В1-В4</h2>
-      <div class="area_wrapper" id="roomArea">
+      <fieldset>
+        <legend>Данные о геометрии помещения</legend>
+        <div class="area_wrapper" id="roomArea">
         <div class="maxArea">
           <span>Площадь помещения S<sub>п</sub>, м<sup>2</sup></span>
           <input type="text" class="input" id="maxArea" tabindex="0"/>
@@ -35,37 +37,45 @@
         </div>
         
       </div>
-      <div class="material-wrapper">
-        <span>Выбрать вещество </span>
-        <select name="material" id="material" type="text"> </select>
-       </div>
-      <!-- <button type="button" id="addMaterial">Добавить</button> -->
-      <div class="table">
-        <div class="table-head">
-          <div class="cells head"><span>Наименование вещества</span></div>
-          <div class="cells head"><span>Низшая теплота сгорания вещества Q<sub>н</sub>, МДж/ кг</span></div>
-          <div class="cells head"><span>Количество вещества G, кг</span></div>
-        </div>
-        <div class="table-row" id="tableRow">          
-          <div class="row" name="newRow">
-            <div class="cells" >
-              <input type="text" class="input" name="substance"/> 
-            </div>
-            <div class="cells">
-              <input type="text" class="input" name="heat"/>
-            </div>
-            <div class="cells">
-              <input type="text" class="input" name="weight"/>              
-            </div>
-            <span class="icon" id="add"><i class="fas fa-plus"></i></span>
-            <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
-          </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Вещество пожарной нагрузки</legend>
+          <div class="material-wrapper">
+                  <span>Выбрать вещество </span>
+                  <select name="material" id="material" type="text"> </select>
+                </div>
+                
+                <div class="table">
+                  <div class="table-head">
+                    <div class="cells head"><span>Наименование вещества</span></div>
+                    <div class="cells head"><span>Низшая теплота сгорания вещества Q<sub>н</sub>, МДж/ кг</span></div>
+                    <div class="cells head"><span>Количество вещества G, кг</span></div>
+                  </div>
+                  <div class="table-row" id="tableRow">          
+                    <div class="row" name="newRow">
+                      <div class="cells" >
+                        <input type="text" class="input" name="substance"/> 
+                      </div>
+                      <div class="cells">
+                        <input type="text" class="input" name="heat"/>
+                      </div>
+                      <div class="cells">
+                        <input type="text" class="input" name="weight"/>              
+                      </div>
+                      <span class="icon" id="add"><i class="fas fa-plus"></i></span>
+                      <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
+                    </div>
 
-          <button type="button" id="addRow">+</button>
-        </div>
-        <button type="button" id="result" >result</button>
-      </div>
-      <div class="result-wrapper">
+                    <button type="button" id="addRow">+</button>
+                  </div>
+                  <button type="button" id="result" >result</button>
+                </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Результат вычислений</legend>
+        <div class="result-wrapper">
         <div>Пожарная нагрузка участка Q, МДж 
           <span id="fireLoad">
 
@@ -85,10 +95,18 @@
           
           <span id="calcTempFireLoad"></span>
         </div>
+
+        <div>
+          <p>Расчетная пожарная нагрузка (0,64*g<sub>т</sub>*H<sup>2</sup>), МДж</p>
+          <span id="tempLoad"></span>
+        </div>
+
         <div>
           Категория помещения: <span id="category"></span>
         </div>
       </div>
+      </fieldset>
+      
       
     </div>
   </body>
