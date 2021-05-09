@@ -82,7 +82,7 @@ _tempLoad.innerHTML=0.6*newTempFireLoad*Math.pow(heigth,2)
 )
 
 }
-
+//Замена запятой на точку
 
 function replaceElem(elem) {    
     return elem.replace(",",".")
@@ -94,18 +94,12 @@ function checkData(arr) {
 
    arr.map( (item)  => {
        
-    if(isNaN(item) & isNaN(replaceElem(item))) {
-            return alert("Введите числовое значение");
-            
-        }
-        else if (item == 0) {
-            return alert("Значение должно быть больше нуля");
-            
-        }
+    outer: if(isNaN(item) & isNaN(replaceElem(item)) || item==0)  break outer 
+        
         else {
            return item; 
         }
-        
+        return alert("Введите числовое значение больше нуля");
    }
     )
 
