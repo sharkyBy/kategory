@@ -105,4 +105,6 @@ function checkData(arr) {
 
 }
 
+
+
 export {fireLoad}

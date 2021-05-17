@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    
-    <script defer type="module" src="./js/main.js"></script>
-   
-    <title>Kategory</title>
-  </head>
-  <body>
-    <div class="container">
-      <h2>Определение категории помещений В1-В4</h2>
-      <fieldset>
-        <legend>Данные о геометрии помещения</legend>
-        <div class="area_wrapper" id="roomArea">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <script defer type="module" src="./js/main.js"></script>
+
+  <title>Kategory</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Определение категории помещений В1-В4</h2>
+    <fieldset>
+      <legend>Данные о геометрии помещения</legend>
+      <div class="area_wrapper" id="roomArea">
         <div class="maxArea">
           <span>Площадь помещения S<sub>п</sub>, м<sup>2</sup></span>
-          <input type="text" class="input" id="maxArea" tabindex="0" value="10"/>
+          <input type="text" class="input" id="maxArea" tabindex="0" value="10" />
 
         </div>
         <div class="area">
           <span>Площадь размещения пожарной нагрузки S, м<sup>2</sup>
-          </span>  
-          <input type="text" class="input" id="area" tabindex="1" value="10"/>
+          </span>
+          <input type="text" class="input" id="area" tabindex="1" value="10" />
+          <div class="tooltip" id="areaTooltip">Площадь размещения нагрузки не менее 10м<sup>2</sup> и не более площади
+            помещения</div>
         </div>
-        
+
         <div class="height">
           <span>
-          Минимальное расстояние от поверхности 
-          пожарной нагрузки до нижнего пояса ферм 
-          перекрытия (покрытия) Н, м
-        </span> 
-          <input type="text" class="input" id="height" tabindex="2"/>       
+            Минимальное расстояние от поверхности
+            пожарной нагрузки до нижнего пояса ферм
+            перекрытия (покрытия) Н, м
+          </span>
+          <input type="text" class="input" id="height" tabindex="2" />
         </div>
-        
-      </div>
-      </fieldset>
-      
-      <fieldset>
-        <legend>Вещество пожарной нагрузки</legend>
-          <div class="material-wrapper">
-                  <span>Выбрать вещество </span>
-                  <select name="material" id="material" type="text"> </select>
-                </div>
-                
-                <div class="table">
-                  <div class="table-head">
-                    <div class="cells head"><span>Наименование вещества</span></div>
-                    <div class="cells head"><span>Низшая теплота сгорания вещества Q<sub>н</sub>, МДж/ кг</span></div>
-                    <div class="cells head"><span>Количество вещества G, кг</span></div>
-                  </div>
-                  <div class="table-row" id="tableRow">          
-                    <div class="row" name="newRow">
-                      <div class="cells" >
-                        <input type="text" class="input" name="substance"/> 
-                      </div>
-                      <div class="cells">
-                        <input type="text" class="input" name="heat"/>
-                      </div>
-                      <div class="cells">
-                        <input type="text" class="input" name="weight"/>              
-                      </div>
-                      <span class="icon" id="add"><i class="fas fa-plus"></i></span>
-                      <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
-                    </div>
 
-                    <button type="button" id="addRow">+</button>
-                  </div>
-                  <button type="button" id="result" >result</button>
-                </div>
-      </fieldset>
-      
-      <fieldset>
-        <legend>Результат вычислений</legend>
-        <div class="result-wrapper">
-        <div>Временная пожарная нагрузка участка Q, МДж 
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Вещество пожарной нагрузки</legend>
+      <div class="material-wrapper">
+        <span>Выбрать вещество </span>
+        <select name="material" id="material" type="text"> </select>
+      </div>
+
+      <div class="table">
+        <div class="table-head">
+          <div class="cells head"><span>Наименование вещества</span></div>
+          <div class="cells head"><span>Низшая теплота сгорания вещества Q<sub>н</sub>, МДж/ кг</span></div>
+          <div class="cells head"><span>Количество вещества G, кг</span></div>
+        </div>
+        <div class="table-row" id="tableRow">
+          <div class="row" name="newRow">
+            <div class="cells">
+              <input type="text" class="input" name="substance" />
+            </div>
+            <div class="cells">
+              <input type="text" class="input" name="heat" />
+            </div>
+            <div class="cells">
+              <input type="text" class="input" name="weight" />
+            </div>
+            <span class="icon" id="add"><i class="fas fa-plus"></i></span>
+            <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
+          </div>
+
+          <button type="button" id="addRow">+</button>
+        </div>
+        <button type="button" id="result"> <i class="fas fa-calculator"></i> </button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Результат вычислений</legend>
+      <div class="result-wrapper">
+        <div>Временная пожарная нагрузка участка Q, МДж
           <span id="fireLoad">
 
           </span>
@@ -87,12 +91,12 @@
 
           </span>
         </div>
-        <div >
+        <div>
           <p>
-           Удельная расчетная пожарная нагрузка g<sub>т</sub>, 
-          МДж/м<sup>2</sup> 
+            Удельная расчетная пожарная нагрузка g<sub>т</sub>,
+            МДж/м<sup>2</sup>
           </p>
-          
+
           <span id="calcTempFireLoad"></span>
         </div>
 
@@ -105,9 +109,10 @@
           Категория помещения: <span id="category"></span>
         </div>
       </div>
-      </fieldset>
-      
-      
-    </div>
-  </body>
+    </fieldset>
+
+
+  </div>
+</body>
+
 </html>

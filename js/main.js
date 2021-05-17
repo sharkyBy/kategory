@@ -46,4 +46,22 @@ function checkValue(e) {
   
 }
 
+let inputArea = document.getElementById("area");
+inputArea.addEventListener("mousemove",tooltipMove);
+inputArea.addEventListener("mouseout", tooltipRemove)
 
+function tooltipMove() {  
+  let tooltip = document.getElementById("areaTooltip");
+  // console.log(tooltip)
+  tooltip.classList.add("active");
+ 
+}
+
+
+
+function tooltipRemove() {
+  let tooltip = document.getElementById("areaTooltip");
+  // console.log(tooltip)
+  tooltip.classList.remove("active") 
+  // inputArea.removeEventListener("mousemove",tooltipMove)
+}

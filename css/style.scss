@@ -8,50 +8,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
+// :root{--yellow:black;}
+body {
+  background:  $body-bgd, whitesmoke;
+}
 .container {
   width: 600px;
   min-width: 300px;
   margin: 0 auto;
   margin-top: 50px;
   font-family: "RobotoRegular";
+  
 
   h2 {
-    
+
     text-align: center;
     margin-bottom: 20px;
     // border:1px solid red;
-    
+
 
   }
 
-//Блок задания геометрических характеристик
+  //Блок задания геометрических характеристик
 
-fieldset {
-  border-radius: 10px;
-  margin-bottom: 10px;
-  legend {
-    margin-left: 20px;
-    font-style: italic;
+  fieldset {
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    legend {
+      margin-left: 20px;
+      font-style: italic;
+    }
   }
-}
+
   .area_wrapper {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
     margin-top: 10px;
     font-family: "RobotoLight";
-        
-    .area, .height, .maxArea {
+
+    .area,
+    .height,
+    .maxArea {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       margin-bottom: 20px;
       padding: 10px 0px;
-      background-color:$area-bgd;
+      background-color: $area-bgd;
       color: $area-color;
       border-radius: 10px;
+      position: relative;
     }
 
 
@@ -60,6 +71,7 @@ fieldset {
       width: 70%;
       height: auto;
     }
+
     input {
       width: 120px;
       height: 25px;
@@ -76,7 +88,7 @@ fieldset {
     align-items: center;
     width: 60%;
     padding: 10px 0px;
-    background-color:$select-bgd;
+    background-color: $select-bgd;
     font-family: "RobotoLight";
     color: $select-color;
     margin-top: 10px;
@@ -97,9 +109,10 @@ fieldset {
       justify-content: center;
       align-items: center;
     }
-    .cells {    
-      text-align: center;      
-      border: 1px solid white;   
+
+    .cells {
+      text-align: center;
+      border: 1px solid white;
       height: auto;
       // border: 1px solid red;
     }
@@ -113,26 +126,31 @@ fieldset {
       font-family: "RobotoLight";
       font-size: 16px;
       background-color: $table-head-bgd;
+
       .cells {
         padding: 2px 0;
         border: 1px solid white;
+
         &:first-child {
           width: 50%;
-          
+
         }
+
         &:nth-child(2) {
-          width:25%;
+          width: 25%;
         }
+
         &:last-child {
           width: 25%;
         }
       }
     }
+
     &-row {
       position: relative;
       width: 100%;
       z-index: 0;
-      
+
       // background-color: aquamarine;
       .row {
         display: flex;
@@ -141,24 +159,29 @@ fieldset {
         width: 100%;
         height: 25px;
         margin-top: 2px;
+
         .cells {
-         border: 1px solid rgb(65, 68, 68);
-         color: black;
+          border: 1px solid rgb(65, 68, 68);
+          color: black;
+
           &:first-child {
             width: 50%;
-                               
+
           }
+
           &:nth-child(2) {
             width: 25%;
-            
+
           }
+
           &:nth-child(3) {
-            width: 25%;          
+            width: 25%;
           }
         }
-        .input {   
+
+        .input {
           width: 100%;
-          height: auto;               
+          height: auto;
           font-family: "RobotoLight";
           font-size: 16px;
           outline-style: none;
@@ -168,15 +191,16 @@ fieldset {
       }
     }
 
-    
+
   }
 
-  
+
 
   [name="material"] {
     width: 180px;
     height: 25px;
     margin-left: 10px;
+
     option {
       font-family: inherit;
       font-size: 14px;
@@ -190,7 +214,7 @@ fieldset {
 
   #addRow {
     width: 40px;
-    height:auto;
+    height: auto;
     background-color: $addrow-bgd;
     color: $addrow-color;
     position: absolute;
@@ -198,9 +222,18 @@ fieldset {
     right: 0px;
     font-size: 16px;
     padding: 2px 0px;
+    transition: all 0.5s;
+    font-family: "RobotoBold";
+    cursor: pointer;
+    &:hover {
+      transition: all 0.5s;
+      color: $calc-bgd;
+      box-shadow: inset 40px 0 0 0 whitesmoke ;
+     
+    }
   }
 
- 
+
   .icon {
     display: flex;
     justify-content: center;
@@ -213,43 +246,60 @@ fieldset {
 
 
 
-   &:hover {
-     background-color: rgb(241, 245, 245);
-     border:1px solid rgb(65,68,68);
-     transition: all 0.3s;
-   }
+    &:hover {
+      background-color: rgb(241, 245, 245);
+      border: 1px solid rgb(65, 68, 68);
+      transition: all 0.3s;
+    }
 
     i {
       position: relative;
       z-index: 1;
       margin: 2px;
-      font-size: 14px;    
+      font-size: 14px;
     }
-  
+
   }
-  
-  #add, [name="add"] {
+
+  #add,
+  [name="add"] {
     position: absolute;
     top: 2px;
     right: -30px;
     color: rgb(76, 211, 76);
     z-index: 10;
     font-family: "RobotoLight";
+    cursor: pointer;
   }
 
-  #delete, [name="delete"] {
+  #delete,
+  [name="delete"] {
     position: absolute;
     top: 2px;
     right: -60px;
     color: rgb(255, 2, 2);
     z-index: 10;
     font-family: "RobotoLight";
+    cursor: pointer;
+   
   }
 
   #result {
     width: 60px;
     height: 30px;
     margin-top: 10px;
+    font-size: 16px;
+    font-family: "RobotoLight";
+    background-color: $calc-bgd;
+    color:$calc-color;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transition: all 0.5s;
+      color: $calc-bgd;
+      box-shadow: inset 60px 0 0 0 whitesmoke ;
+    }
   }
 
   .result-wrapper {
@@ -267,10 +317,48 @@ fieldset {
       padding-left: 10px;
 
       span {
-        color: rgb(218, 215, 50);
+        color: $result-color;
         font-style: italic;
         padding-right: 10px;
       }
     }
   }
+
+  .tooltip {
+    // display: none;   
+    position: absolute;
+    top: 0;
+    right: -220px;
+    padding: 2px;
+    width: 200px;
+    height: auto;
+    font-size: 12px;
+    background-color: rgb(130, 138, 138);
+    color: $result-color;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    transition: all 0.5s;
+    opacity: 0;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+
+  // #area:hover +.tooltip{
+  //   display: inline-block;
+  //   opacity: 1;
+  // }
+
+  .active {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.7s;
+  }
+ 
+
 }
+
+
