@@ -20,8 +20,14 @@ function createRow() {
   spanAdd.addEventListener("click", setValueCells);
   spanDelete.addEventListener("click", deleteRow);
 
-  setAttributes(iconAdd, { class: "fas fa-plus" });
-  setAttributes(iconDelete, { class: "fas fa-trash-alt" });
+  setAttributes(iconAdd, { 
+    class: "fas fa-plus",
+    title: "Добавить выбранное вещество"
+  });
+  setAttributes(iconDelete, { 
+    class: "fas fa-trash-alt",
+    title: "Удалить строку"
+  });
 
   spanAdd.append(iconAdd);
   spanDelete.append(iconDelete);
@@ -36,13 +42,24 @@ function createRow() {
           type: "text",
           class: "input",
           name: "substance",
+          title:"Ввести (выбрать) вещество",
         });
         break;
       case 2:
-        setAttributes(input, { type: "text", class: "input", name: "heat" });
+        setAttributes(input, {
+           type: "text", 
+           class: "input", 
+           name: "heat",
+           title:"Ввести (выбрать) теплоту сгорания",
+          });
         break;
       case 3:
-        setAttributes(input, { type: "text", class: "input", name: "weight" });
+        setAttributes(input, { 
+          type: "text", 
+          class: "input", 
+          name: "weight", 
+          title:"Количество вещества, кг",
+         });
         break;
       default:
         false;

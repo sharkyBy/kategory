@@ -20,7 +20,7 @@
       <div class="area_wrapper" id="roomArea">
         <div class="maxArea">
           <span>Площадь помещения S<sub>п</sub>, м<sup>2</sup></span>
-          <input type="text" class="input" id="maxArea" tabindex="0" value="10" />
+          <input type="text" class="input" id="maxArea" tabindex="0" value="10" title="Площадь помещения"/>
 
         </div>
         <div class="area">
@@ -37,7 +37,7 @@
             пожарной нагрузки до нижнего пояса ферм
             перекрытия (покрытия) Н, м
           </span>
-          <input type="text" class="input" id="height" tabindex="2" />
+          <input type="text" class="input" id="height" tabindex="2" title="Высота помещения"/>
         </div>
 
       </div>
@@ -47,7 +47,7 @@
       <legend>Вещество пожарной нагрузки</legend>
       <div class="material-wrapper">
         <span>Выбрать вещество </span>
-        <select name="material" id="material" type="text"> </select>
+        <select name="material" id="material" type="text" title="Выбрать вещество пожарной нагрузки"> </select>
       </div>
 
       <div class="table">
@@ -59,21 +59,21 @@
         <div class="table-row" id="tableRow">
           <div class="row" name="newRow">
             <div class="cells">
-              <input type="text" class="input" name="substance" />
+              <input type="text" class="input" name="substance" title="Ввести (выбрать) вещество"/>
             </div>
             <div class="cells">
-              <input type="text" class="input" name="heat" />
+              <input type="text" class="input" name="heat" title="Ввести (выбрать) теплоту сгорания" />
             </div>
             <div class="cells">
-              <input type="text" class="input" name="weight" />
+              <input type="text" class="input" name="weight" title="Количество вещества, кг"/>
             </div>
-            <span class="icon" id="add"><i class="fas fa-plus"></i></span>
-            <span class="icon" id="delete"><i class="fas fa-trash-alt"></i></span>
+            <span class="icon" id="add" title="Добавить выбранное вещество"><i class="fas fa-plus"></i></span>
+            <span class="icon" id="delete" title="Удалить строку"><i class="fas fa-trash-alt"></i></span>
           </div>
 
-          <button type="button" id="addRow">+</button>
+          <button type="button" id="addRow" title="Добавить строку">+</button>
         </div>
-        <button type="button" id="result"> <i class="fas fa-calculator"></i> </button>
+        <button type="button" id="result" title="Вычислить"> <i class="fas fa-calculator"></i> </button>
       </div>
     </fieldset>
 

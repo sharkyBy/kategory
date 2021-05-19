@@ -16,7 +16,9 @@ _firstSpan.addEventListener("click", (e) => {
 
 // Рассчет результата умножения ячеек таблицы
 const _result = document.getElementById("result");
-_result.addEventListener("click", ()=>fireLoad(_area.value,_height.value));
+// _result.addEventListener("click", ()=>fireLoad(_area.value,_height.value));
+_result.addEventListener("click", fireLoad)
+
 
 //Добавление строки в таблицу
 const _addRow = document.getElementById("addRow");
@@ -30,38 +32,32 @@ const _deleteRow = document.getElementById("delete");
 _deleteRow.addEventListener("click", (e)=>deleteRow(e));
 
 //Получение результата из поля "площадь" и "высота"
-let areaValue = (e)=>checkValue(e);
-let heightValue = (e)=>checkValue(e);
+let areaValue = (e)=>getValue(e);
+let heightValue = (e)=>getValue(e);
 
 //Получение значения площади
-const _area = document.getElementById("area");
-_area.addEventListener("input", areaValue )
+// const _area = document.getElementById("area");
+// _area.addEventListener("input", areaValue )
 //Получение значения высоты
-const _height = document.getElementById("height");
-_height.addEventListener("input", heightValue);
+// const _height = document.getElementById("height");
+// _height.addEventListener("input", heightValue);
 
-function checkValue(e) {
+//Получение значения текущего элемента
+function getValue(e) {
   console.log(e.currentTarget.value);
   return e.currentTarget.value
   
 }
 
+
+//Выведение подсказки
 let inputArea = document.getElementById("area");
-inputArea.addEventListener("mousemove",tooltipMove);
-inputArea.addEventListener("mouseout", tooltipRemove)
+inputArea.addEventListener("mouseover",tooltipMove);
+inputArea.addEventListener("mouseout",tooltipMove)
 
 function tooltipMove() {  
-  let tooltip = document.getElementById("areaTooltip");
-  // console.log(tooltip)
-  tooltip.classList.add("active");
- 
+  let tooltip = document.getElementById("areaTooltip");  
+  tooltip.classList.contains("active")==false ? tooltip.classList.add("active"):
+  tooltip.classList.remove("active"); 
 }
 
-
-
-function tooltipRemove() {
-  let tooltip = document.getElementById("areaTooltip");
-  // console.log(tooltip)
-  tooltip.classList.remove("active") 
-  // inputArea.removeEventListener("mousemove",tooltipMove)
-}

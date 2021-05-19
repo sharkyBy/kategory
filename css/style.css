@@ -6271,11 +6271,11 @@ body {
 }
 .container #addRow {
   width: 40px;
-  height: auto;
+  height: 30px;
   background-color: #3b3333;
   color: whitesmoke;
   position: absolute;
-  bottom: -30px;
+  bottom: -40px;
   right: 0px;
   font-size: 16px;
   padding: 2px 0px;
@@ -6286,7 +6286,7 @@ body {
 .container #addRow:hover {
   transition: all 0.5s;
   color: #3b3333;
-  box-shadow: inset 40px 0 0 0 whitesmoke;
+  box-shadow: inset 40px 30px 0 0 whitesmoke;
 }
 .container .icon {
   display: flex;
@@ -6343,7 +6343,7 @@ body {
 .container #result:hover {
   transition: all 0.5s;
   color: #3b3333;
-  box-shadow: inset 60px 0 0 0 whitesmoke;
+  box-shadow: inset 60px 30px 0 0 whitesmoke;
 }
 .container .result-wrapper {
   display: block;

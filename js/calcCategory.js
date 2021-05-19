@@ -1,3 +1,6 @@
+import {checkData} from "./checkData.js";
+
+
 //Сумма произведений ячеек строки
 
  function multiplyCells() {   
@@ -27,29 +30,30 @@
 }
 
 
-
-function fireLoad(area, heigth) {
+//Определение категории помещения
+function fireLoad() {
     let fireLoad = multiplyCells();
 
-    console.log(fireLoad, area, heigth);
-    let maxArea = document.getElementById("maxArea").value
+    // console.log(fireLoad, area, heigth);
+    let maxArea = checkData().maxArea;
+    let area = checkData().area; 
+    let height =checkData().height;
+    // console.log([area,height, maxArea]);
 
-    checkData([area,heigth, maxArea]);
-
-    let temporaryFireLoad = Math.round(fireLoad / replaceElem(area) * 100) / 100;    
+    let temporaryFireLoad = fireLoad / area;    
     let newTempFireLoad;
     let tempFire;
     let category;
 
     if(temporaryFireLoad <=2200 & temporaryFireLoad > 1400) {
         newTempFireLoad = 2200;
-        tempFire = 0.64 * newTempFireLoad * replaceElem(Math.pow(heigth,2));
+        tempFire = 0.64 * newTempFireLoad * height;
         fireLoad >= tempFire ? category = "категория В1": category =  "категория В2";
 
     }
     else if(temporaryFireLoad <=1400 & temporaryFireLoad > 200) {
         newTempFireLoad = 1400;
-        tempFire = 0.6 * newTempFireLoad * Math.pow(heigth,2);
+        tempFire = 0.6 * newTempFireLoad * height;
         fireLoad >= tempFire ? category = "категория В2": category = "категория В3";
     }
     else if(temporaryFireLoad <=200 & temporaryFireLoad > 100) {
@@ -74,11 +78,11 @@ let _calcTempFireLoad = document.getElementById("calcTempFireLoad");
 let _tempLoad = document.getElementById("tempLoad");
 
 return (
-    _category.innerHTML =category,
-_fireLoad.innerHTML = fireLoad,
-_tempFireLoad.innerHTML = temporaryFireLoad,
-_calcTempFireLoad.innerHTML = newTempFireLoad,
-_tempLoad.innerHTML=0.6*newTempFireLoad*Math.pow(heigth,2)
+_category.innerHTML =category,
+_fireLoad.innerHTML = Math.round(fireLoad,0),
+_tempFireLoad.innerHTML = Math.round(temporaryFireLoad),
+_calcTempFireLoad.innerHTML = Math.round(newTempFireLoad),
+_tempLoad.innerHTML = Math.round(0.6*newTempFireLoad*height)
 )
 
 }
@@ -87,24 +91,6 @@ _tempLoad.innerHTML=0.6*newTempFireLoad*Math.pow(heigth,2)
 function replaceElem(elem) {    
     return elem.replace(",",".")
 }
-
-//Проверка введенных данных
-
-function checkData(arr) {
-
-   arr.map( (item)  => {
-       
-    outer: if(isNaN(item) & isNaN(replaceElem(item)) || item==0)  break outer 
-        
-        else {
-           return item; 
-        }
-        return alert("Введите числовое значение больше нуля");
-   }
-    )
-
-}
-
 
 
 export {fireLoad}
